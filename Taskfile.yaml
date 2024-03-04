@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - sudo docker build -t santur-art .
+    silent: true
+  
+  run:
+    cmds:
+      - sudo docker run --rm -d --name santur-art -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt santur-art
