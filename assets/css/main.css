@@ -177,7 +177,7 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
     	font-family: 'Helvetica', 'Arial', sans-serif;
 		color: #ffffff;
-		font-weight: 600;
+		font-weight: normal;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
 		text-transform: uppercase;
@@ -1307,6 +1307,33 @@ input, select, textarea {
 			#header .logo .icon:before {
 				font-size: 2rem;
 			}
+
+		#header .content .inner {
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		}
+
+		#header .content .inner h1 {
+		    margin-bottom: 0.5rem; /* Adjust this value as needed */
+		    letter-spacing: 0.2rem; /* Reduce letter-spacing */
+		    line-height: 1.2; /* Adjust line-height for compactness */
+		    font-weight: 700; /* Increase font-weight for more pronounced text */
+		}
+
+		#header .center-image {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    width: 100%;
+		    margin-top: 0rem; /* Adjust this value as needed */
+		}
+
+		#header .center-image img {
+		    max-width: 5%; /* Adjust this value as needed */
+		    height: auto;
+		}
 
 		#header .content {
 			border-style: solid;
