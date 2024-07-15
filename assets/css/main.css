@@ -1359,7 +1359,7 @@ input, select, textarea {
 
 		@media (max-width: 480px) {
 		    #header .center-image img {
-		        max-width: 50%;
+		        max-width: 40%;
 		    }
 		}
 
@@ -1370,13 +1370,13 @@ input, select, textarea {
 
 		@media (min-width: 768px) {
 		    #header .center-image img {
-		        max-width: 150px; /* Adjust as needed */
+		        max-width: 130px; /* Adjust as needed */
 		    }
 		}
 
 		@media (min-width: 1024px) {
 		    #header .center-image img {
-		        max-width: 200px; /* Adjust as needed */
+		        max-width: 130px; /* Adjust as needed */
 		    }
 		}
 
