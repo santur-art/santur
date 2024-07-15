@@ -1316,7 +1316,7 @@ input, select, textarea {
 		}
 
 		#header .content .inner h1 {
-		    margin-bottom: 0.5rem; /* Adjust this value as needed */
+		    margin-bottom: 0.4rem; /* Adjust this value as needed */
 		    letter-spacing: 0.2rem; /* Reduce letter-spacing */
 		    line-height: 1.2; /* Adjust line-height for compactness */
 		    font-weight: 700; /* Increase font-weight for more pronounced text */
