@@ -1322,18 +1322,71 @@ input, select, textarea {
 		    font-weight: 700; /* Increase font-weight for more pronounced text */
 		}
 
+		/* Responsive Design for Logo and Santur Farsi Image */
+		#header .content .inner {
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		}
+
+		#header .content .inner h1 {
+		    margin-bottom: 0.4rem;
+		    letter-spacing: 0.2rem;
+		    line-height: 1.2;
+		    font-weight: 700;
+		}
+
 		#header .center-image {
 		    display: flex;
 		    justify-content: center;
 		    align-items: center;
 		    width: 100%;
-		    margin-top: 0rem; /* Adjust this value as needed */
+		    margin-top: 0rem;
 		}
 
 		#header .center-image img {
-		    max-width: 5%; /* Adjust this value as needed */
+		    max-width: 5%;
 		    height: auto;
 		}
+
+		/* Media Queries for Responsive Design */
+		@media (max-width: 768px) {
+		    #header .center-image img {
+		        max-width: 30%;
+		    }
+		}
+
+		@media (max-width: 480px) {
+		    #header .center-image img {
+		        max-width: 50%;
+		    }
+		}
+
+		/* Ensure logo doesn't exceed a maximum width */
+		#header .center-image img {
+		    max-width: 100px; /* Adjust as needed */
+		}
+
+		@media (min-width: 768px) {
+		    #header .center-image img {
+		        max-width: 150px; /* Adjust as needed */
+		    }
+		}
+
+		@media (min-width: 1024px) {
+		    #header .center-image img {
+		        max-width: 200px; /* Adjust as needed */
+		    }
+		}
+
+		/* Additional Styling to prevent logo from becoming huge */
+		@media (max-width: 360px) {
+		    #header .center-image img {
+		        max-width: 40%; /* Ensure it's not too large on very small screens */
+		    }
+		}
+
 
 		#header .content {
 			border-style: solid;
@@ -1655,6 +1708,7 @@ input, select, textarea {
 			}
 
 		}
+
 
 /* Footer */
 
