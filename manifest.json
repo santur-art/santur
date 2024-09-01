@@ -1,14 +1,14 @@
 {
-    "name": "Your Site Name",
-    "short_name": "SiteName",
+    "name": "santur.art",
+    "short_name": "SanturArt",
     "icons": [
       {
-        "src": "/path/to/favicon.ico",
+        "src": "/images/favicon.ico",
         "sizes": "192x192",
         "type": "image/x-icon"
       },
       {
-        "src": "/path/to/favicon.ico",
+        "src": "/images/favicon.ico",
         "sizes": "512x512",
         "type": "image/x-icon"
       }
