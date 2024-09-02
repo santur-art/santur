@@ -13,50 +13,41 @@ document.querySelectorAll('.lightbox').forEach(item => {
         `;
         document.body.appendChild(lightboxOverlay);
 
-        // Show the lightbox
+        // Show the lightbox with a slight delay for transition
         setTimeout(() => {
             lightboxOverlay.classList.add('active');
         }, 10);
 
         // Close the lightbox on "X" button click
         lightboxOverlay.querySelector('.close-btn').addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default action
-            e.stopPropagation(); // Stop the event from bubbling up
+            e.preventDefault(); // Prevent default anchor action
+            e.stopPropagation(); // Stop event bubbling
             closeLightbox(lightboxOverlay);
         });
 
-        // Close the lightbox on "Esc" key press
-        document.addEventListener('keydown', function escHandler(event) {
+        // Close the lightbox on "Esc" key press or when clicking outside the image
+        const closeOnEscapeOrOutsideClick = (event) => {
             if (event.key === 'Escape' || event.keyCode === 27) {
-                event.preventDefault(); // Prevent default action
-                event.stopPropagation(); // Stop event propagation
+                event.preventDefault(); // Prevent the default back navigation behavior
                 closeLightbox(lightboxOverlay);
-                document.removeEventListener('keydown', escHandler);
-            }
-        });
-
-        // Close the lightbox when clicking outside the image
-        lightboxOverlay.addEventListener('click', function(event) {
-            if (event.target === lightboxOverlay) {
-                event.preventDefault(); // Prevent default action
+            } else if (event.target === lightboxOverlay) {
                 closeLightbox(lightboxOverlay);
             }
-        });
+        };
 
-        // Handle Space key to scroll to the gallery section
-        document.addEventListener('keydown', function spaceHandler(event) {
-            if (event.key === ' ') {
-                event.preventDefault(); // Prevent default space key behavior
-                document.querySelector('#gallery').scrollIntoView({ behavior: 'smooth' });
-                document.removeEventListener('keydown', spaceHandler);
-            }
-        });
+        // Attach keydown and click listeners
+        document.addEventListener('keydown', closeOnEscapeOrOutsideClick);
+        lightboxOverlay.addEventListener('click', closeOnEscapeOrOutsideClick);
+
+        function closeLightbox(lightboxOverlay) {
+            lightboxOverlay.classList.remove('active');
+            setTimeout(() => {
+                lightboxOverlay.remove();
+            }, 300);
+
+            // Remove event listeners to prevent memory leaks
+            document.removeEventListener('keydown', closeOnEscapeOrOutsideClick);
+            lightboxOverlay.removeEventListener('click', closeOnEscapeOrOutsideClick);
+        }
     });
 });
-
-function closeLightbox(lightboxOverlay) {
-    lightboxOverlay.classList.remove('active');
-    setTimeout(() => {
-        lightboxOverlay.remove();
-    }, 300);
-}

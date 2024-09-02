@@ -18,11 +18,14 @@
     border-radius: 8px;
     margin: 0;
     padding: 0;
+    /* Enforce aspect ratio */
+    aspect-ratio: 1 / 1;
 }
 
 .grid-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire grid item */
     display: block;
     border-radius: 8px;
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -58,14 +61,18 @@
     max-width: 90%;
     max-height: 90%;
     z-index: 1001;
+    overflow: auto; /* Allow scrolling within the lightbox content */
 }
 
 .lightbox-content img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
     border-radius: 8px;
 }
 
+/* Lightbox active state */
 .lightbox-overlay.active {
     opacity: 1;
     visibility: visible;
