@@ -3,12 +3,12 @@
     "short_name": "SanturArt",
     "icons": [
       {
-        "src": "/images/app_icon/santur_art_app_icon_512.png",
+        "src": "/images/icons/santur_art_app_icon_512.png",
         "sizes": "512x512",
         "type": "image/x-icon"
       },
       {
-        "src": "/images/app_icon/santur_art_app_icon_192.png",
+        "src": "/images/icons/santur_art_app_icon_192.png",
         "sizes": "192x192",
         "type": "image/x-icon"
       }
